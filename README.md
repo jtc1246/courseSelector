@@ -2,6 +2,12 @@
 
 ### 此版本只支持监视是否有空位，在有空位时自动选择。暂不支持在开始时快速选课，以后可能会支持该模式。
 
+### 关于 Cookie：先在浏览器里登陆好，刷新一下，确定是已登陆状态，在浏览器的设置里复制 Cookie，粘贴到程序里
+
+### 关于 courseId, electTurnLessonTaskId, lessonTaskId, electTurnId 等：
+
+用 getCourseUrl 那个链接把数据下载下来，转成 Json 格式，在那里面就可以看到了
+
 ### 此版本只是我当时用的代码直接上传了，以后会修改得更易用
 
 ### 原理：抓包分析 Http 请求，然后用 Python 模拟发送 Http 请求
