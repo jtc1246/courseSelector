@@ -61,7 +61,6 @@ selectCourseBody=selectCourseBody+quote(text2,encoding='utf-8')
 # print(resp['extra'])
 # print(getTime()-t1)
 # print(getNum(resp['text'],'离散数学'))
-# print(getTime()-t1)
 
 
 # print(resp['status'])
