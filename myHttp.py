@@ -1,4 +1,4 @@
-from globalVariable import globalVar
+from globalVariable import *
 import urllib3 as _myHttp_urllib3
 import urllib3.exceptions as _myHttp_urllib3_exceptions
 import time,json
@@ -19,7 +19,7 @@ def http(url:str,Method:str="GET",Header:dict={},Timeout:int=0,ToJSON:bool=True,
     http1=_myHttp_urllib3.PoolManager()
     global globalVar
     if(Timeout==0):
-        Timeout=500+500*globalVar['device']
+        Timeout=500+500*getGlobalValue('device')
     r=0
     if(ToJSON):
         text={}
@@ -108,5 +108,13 @@ def toJson(Text):
     if i==1:
         text=text['1']
     return text
+
+
+# 格式示例: "2022-01-17 10:00"
+def toUnix(timeStr):
+    timeStr=timeStr+':00'
+    b=time.strptime(timeStr,'%Y-%m-%d %H:%M:%S')
+    c=time.mktime(b)
+    return int(c*1000)
 
 
