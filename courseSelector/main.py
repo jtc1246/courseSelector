@@ -6,7 +6,7 @@ import _thread as thread
 
 def help():
     # 具体内容还没写
-    print('输出帮助信息')
+    print('欢迎使用本软件')
 
 
 
