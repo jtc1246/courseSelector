@@ -2,11 +2,11 @@ from setuptools import setup
 
 setup(
     name='courseSelector',
-    version='0.9.1',
+    version='0.9.2',
     author='Tiancheng Jiao',
     author_email='jtc1246@outlook.com',
     url='https://github.com/jtc1246/courseSelector',
-    description='Automatic course selection program for SJTU-JI',
+    description='An automatic course selection program for SJTU-JI',
     packages=['courseSelector'],
     install_requires=['urllib3'],
     python_requires='>=3',
@@ -25,11 +25,3 @@ setup(
 )
 
 
-# __all__=[
-#     'help',
-#     'check',
-#     'printCourseList',
-#     'waitEmptySpace',
-#     'fastSelect',
-#     'luckyDraw'
-# ]
