@@ -73,6 +73,7 @@ def getAllInformationFirst(): # 第一次获取信息时调用这个函数, 出�
         print("Cookie 失效, 请重新设置 Cookie, 程序已结束运行")
         os._exit(-1)
     setGlobalValue('allInfo',r['text'])
+    setGlobalValue('newMsg',True)
     return r['text']
 
 
