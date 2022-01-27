@@ -5,8 +5,10 @@ import _thread as thread
 
 
 def help():
-    # 具体内容还没写
-    print('欢迎使用本软件')
+    print('欢迎使用 courseSelector')
+    print('上海交通大学密西根学院自动选课软件')
+    print('Github: https://github.com/jtc1246/courseSelector')
+    print('使用说明: https://github.com/jtc1246/courseSelector/blob/main/README.md')
 
 
 

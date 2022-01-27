@@ -59,7 +59,7 @@ def getAllInformationFirst(): # 第一次获取信息时调用这个函数, 出�
     gcu2=getGlobalValue('gcu2')
     gcu3=getGlobalValue('gcu3')
     eti=getGlobalValue('eti')
-    url=quote(gcu2+eti+gcu3)
+    url=quote(gcu2+eti+gcu3,encoding='utf-8')
     url=gcu1+url
     header=getGlobalValue('gch')
     r=http(url,Header=header,Timeout=3000)
@@ -83,14 +83,14 @@ def getAllInformation(): # 后续循环时调用这个函数, 出现异常直接
     gcu2=getGlobalValue('gcu2')
     gcu3=getGlobalValue('gcu3')
     eti=getGlobalValue('eti')
-    url=quote(gcu2+eti+gcu3)
+    url=quote(gcu2+eti+gcu3,encoding='utf-8')
     url=gcu1+url
     header=getGlobalValue('gch')
     r=http(url,Header=header,Timeout=3000)
     if(r['code']==302):
         print(str(getTime())+": Cookie 失效, 请重新设置 Cookie, 程序已结束运行")
         os._exit(-1)
-    if(r['status']!=0 or r['status']==3):
+    if(r['status']!=0 and r['status']!=3):
         return -1
     try:
         re=r['text']['data']
@@ -103,7 +103,7 @@ def getSelectedCoursesId(AllInformation):
     all=AllInformation['data']["electTurnResult"]
     l=[]
     for one in all:
-        l.append(one[['courseId']])
+        l.append(one['courseId'])
     return l
 
 def selectOneCourse(courseId):
@@ -136,7 +136,7 @@ def selectOneCourseLucky(courseId):
     header=deepcopy(header)
     body="jsonString="+quote(jss,encoding='utf-8')
     header['Content-Length']=str(len(body))
-    url=getGlobalValue('scu')+str(getTime())
+    url=getGlobalValue('scul')+str(getTime())
     r=http(url,Method='POST',Header=header,Timeout=1000,BODY=body)
 
 
@@ -145,7 +145,7 @@ def testInternetConnection():
     while True:
         re=testInternet()
         if(re==-1):
-            setGlobalValue('IntFailTimes',getGlobalValue('IntFailTimes')+1)
+            addGlobalVariable('IntFailTimes')
         if(re==0):
             setGlobalValue('IntFailTimes',0)
         if(getGlobalValue('IntFailTimes')%10==3):
