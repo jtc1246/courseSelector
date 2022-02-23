@@ -100,7 +100,6 @@ def getAllInformation(): # 后续循环时调用这个函数, 出现异常直接
         re=r['text']['data']
     except:
         return -1
-    # print(json.dumps(r['text'],ensure_ascii=False).encode('gb2312').decode('gb2312'))
     return r['text']
 
 
@@ -109,7 +108,6 @@ def getSelectedCourses(AllInformation):
     electTurnId=getGlobalValue('eti')
     l=[]
     for one in all:
-        # l.append(one['courseId'])
         if(electTurnId==one["electTurnId"] and str(one["electStatus"])=='4'):
             l.append(one["lessonTaskId"])
     return l
@@ -145,7 +143,6 @@ def selectOneCourseLucky(lessonTaskId):
     body="jsonString="+quote(jss,encoding='utf-8')
     header['Content-Length']=str(len(body))
     url=getGlobalValue('scul')+str(getTime())
-    # print([url,header,body])
     r=http(url,Method='POST',Header=header,Timeout=1000,BODY=body)
 
 
@@ -238,7 +235,3 @@ def mainControl():
                     setGlobalValue(ltid,info)
                     continue
 
-
-
-
-# [electTurnLessonTaskId,canSelect,description]

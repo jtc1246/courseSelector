@@ -29,14 +29,10 @@ def printCourseList(jsessionid:str):
     check(jsessionid)
     getElectTurnId()
     all=getAllInformationFirst()
-    # print(all)
     all=all['data']["lessonTasks"]
-    # print(all)
     f=open('./courses.txt','w')
     f.write('课程名称      |      上课教师        |        课程描述\n')
     for one in all:
-        # print(one["courseId"])
-        # print(one["lessonTaskId"])
         f.write(one["courseName"])
         f.write(' | ')
         try:
@@ -193,8 +189,4 @@ def luckyDraw(jsessionid:str,courses:list):
     for i in ltids:
         print(getGlobalValue(i)[2]+': '+dic[isSelected(i)])
     os._exit(0)
-
-
-
-
 
