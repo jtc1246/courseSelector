@@ -1,7 +1,5 @@
 # 上海交通大学密西根学院自动选课软件
 
-## 注意：Lucky Draw 模式有 Bug，暂未修复
-
 ## 使用方式
 
 ### 1. 安装
@@ -19,20 +17,15 @@
     waitEmptySpace(jsessionid:str,courses:list,threadNum:int=5): 在 Early Bird 且已选满的情况下，等有人取消时自动选择
     fastSelect(jsessionid:str,courses:list,threadNum:int=10): 在 Early Bird 开始时，发送大量请求快速选课
     luckyDraw(jsessionid:str,courses:list): 在 Lucky Draw 模式下，选择有时间冲突的课程
-
-### 使用要求：
-    Python 3
+    courses 参数要求: 数组，里面的每一项为要选课的课程描述（就是printCourseList输出的课程描述）
 
 ### 关于 Cookie：
     先在浏览器里登陆好，刷新一下，确定是已登陆状态，在浏览器的设置里复制 Cookie 中 JSESSIONID 这一项，粘贴到程序里
 
-### 原理：
-    抓包分析 Http 请求，然后用 Python 模拟发送 Http 请求
+## 其它说明
 
-### 其它说明：
-    因现在没有正在进行的选课，此版本未经过充分测试，请谨慎使用
-    GPL v2 开源协议
+    使用要求: Python 3
+    License: GPL v2
+    原理: 抓包分析 Http 请求，然后用 Python 模拟发送 Http 请求
+    联系方式: 邮箱:jtc1246@outlook.com, 微信:15021805270, 手机号:15021805270
 
-### 联系方式：
-    微信：15021805270，
-    邮箱：jtc1246@outlook.com
