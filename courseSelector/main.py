@@ -29,11 +29,14 @@ def printCourseList(jsessionid:str):
     check(jsessionid)
     getElectTurnId()
     all=getAllInformationFirst()
+    # print(all)
     all=all['data']["lessonTasks"]
+    # print(all)
     f=open('./courses.txt','w')
     f.write('课程名称      |      上课教师        |        课程描述\n')
     for one in all:
-        print(one["courseId"])
+        # print(one["courseId"])
+        # print(one["lessonTaskId"])
         f.write(one["courseName"])
         f.write(' | ')
         try:
@@ -57,15 +60,15 @@ def waitEmptySpace(jsessionid:str,courses:list,threadNum:int=5):
         os._exit(-1)
     all=deepcopy(getAllInformationFirst())
     all=all['data']["lessonTasks"]
-    cids=[]
+    ltids=[]
     isExit=False
     isFound=False
     for c in courses:
         isFound=False
         for one in all:
             if(one["lessonClassName"].find(c)>=0):
-                cids.append(one['courseId'])
-                setGlobalValue(one['courseId'],[one['electTurnLessonTaskId'],False,c])
+                ltids.append(one["lessonTaskId"])
+                setGlobalValue(one["lessonTaskId"],[one['electTurnLessonTaskId'],False,c])
                 isFound=True
                 break
         if(not isFound):
@@ -73,8 +76,9 @@ def waitEmptySpace(jsessionid:str,courses:list,threadNum:int=5):
             print('未找到该课程: '+c)
     if(isExit):
         print('存在未找到的课程, 程序已结束运行')
-    cids=tuple(cids)
-    setGlobalValue('courses',cids)
+    ltids=tuple(ltids)
+    print(ltids)
+    setGlobalValue('courses',ltids)
     # 初始化结束
     thread.start_new_thread(testInternetConnection,())
     thread.start_new_thread(keepCookie,())
@@ -82,15 +86,15 @@ def waitEmptySpace(jsessionid:str,courses:list,threadNum:int=5):
     if(currentTime<getGlobalValue('startTime')-10000):
         time.sleep(0.001*(-currentTime+getGlobalValue('startTime')-10000))
     for i in range(0,threadNum):
-        thread.start_new_thread(getAllInformation,())
+        thread.start_new_thread(getInfoMain,())
         time.sleep(1.4/threadNum)
     thread.start_new_thread(mainControl,())
-    for i in cids:
+    for i in ltids:
         thread.start_new_thread(selectOneCourse,(i,))
     while True:
         time.sleep(10)
         isAllSelected=True
-        for i in cids:
+        for i in ltids:
             if(not isSelected(i)):
                 isAllSelected=False
         if(isAllSelected):
@@ -114,15 +118,15 @@ def fastSelect(jsessionid:str,courses:list,threadNum:int=10):
         os._exit(-1)
     all=deepcopy(getAllInformationFirst())
     all=all['data']["lessonTasks"]
-    cids=[]
+    ltids=[]
     isExit=False
     isFound=False
     for c in courses:
         isFound=False
         for one in all:
             if(one["lessonClassName"].find(c)>=0):
-                cids.append(one['courseId'])
-                setGlobalValue(one['courseId'],[one['electTurnLessonTaskId'],True,c])
+                ltids.append(one["lessonTaskId"])
+                setGlobalValue(one["lessonTaskId"],[one['electTurnLessonTaskId'],True,c])
                 isFound=True
                 break
         if(not isFound):
@@ -130,8 +134,8 @@ def fastSelect(jsessionid:str,courses:list,threadNum:int=10):
             print('未找到该课程: '+c)
     if(isExit):
         print('存在未找到的课程, 程序已结束运行')
-    cids=tuple(cids)
-    setGlobalValue('courses',cids)
+    ltids=tuple(ltids)
+    setGlobalValue('courses',ltids)
     # 初始化结束
     thread.start_new_thread(testInternetConnection,())
     thread.start_new_thread(keepCookie,())
@@ -139,15 +143,15 @@ def fastSelect(jsessionid:str,courses:list,threadNum:int=10):
     if(currentTime<getGlobalValue('startTime')-10000):
         time.sleep(0.001*(-currentTime+getGlobalValue('startTime')-10000))
     for i in range(0,3):
-        thread.start_new_thread(getAllInformation,())
+        thread.start_new_thread(getInfoMain,())
     thread.start_new_thread(mainControl,())
-    for i in cids:
+    for i in ltids:
         for j in range(0,threadNum):
             thread.start_new_thread(selectOneCourse,(i,))
     while True:
         time.sleep(10)
         isAllSelected=True
-        for i in cids:
+        for i in ltids:
             if(not isSelected(i)):
                 isAllSelected=False
         if(isAllSelected):

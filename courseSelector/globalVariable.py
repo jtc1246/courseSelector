@@ -50,7 +50,8 @@ _globalVar['etiu']='https://coursesel.umji.sjtu.edu.cn/tpm/findStudentElectTurns
 _globalVar['scu']="https://coursesel.umji.sjtu.edu.cn/tpm/doElect_ElectTurn.action?_t="
 # GetCourseUrl
 _globalVar['gcu1']="https://coursesel.umji.sjtu.edu.cn/tpm/findLessonTasks_ElectTurn.action?jsonString="
-_globalVar['gcu2']='{"isToTheTime":true,"electTurnId":"'
+_globalVar['gcu2']='{"isToTheTime":false,"electTurnId":"'
+_globalVar['gcu22']='{"isToTheTime":true,"electTurnId":"'
 _globalVar['gcu3']='","loadCourseGroup":true,"loadElectTurn":true,"loadCourseType":true,"loadCourseTypeCredit":true,"loadElectTurnResult":true,"loadStudentLessonTask":true,"loadPrerequisiteCourse":true,"lessonCalendarWeek":false,"loadLessonCalendarConflict":false,"loadTermCredit":true,"loadLessonTask":true,"loadDropApprove":true,"loadElectApprove":true}'
 # SelectCourseUrlLucky 这个暂时还不知道, 暂定下面这个, 不过大概率是正确的
 _globalVar['scul']='https://coursesel.umji.sjtu.edu.cn/tpm/saveDraft_ElectTurn.action?_t='
@@ -69,7 +70,7 @@ _globalVar['IntFailTimes']=0
 _globalVar['courses']=tuple()
 
 # globalVar 中还有另外一种数据类型:
-# key 为 courseId, value 为 [electTurnLessonTaskId,canSelect,description]
+# key 为 lessonTaskId, value 为 [electTurnLessonTaskId,canSelect,description]
 
 def getGlobalValue(key):
     global _globalVar

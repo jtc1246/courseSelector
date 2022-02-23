@@ -1,5 +1,5 @@
 from .globalVariable import *
-import time
+import time,json
 from copy import deepcopy
 from .myHttp import *
 import os
@@ -57,6 +57,8 @@ def setCookie(jsessionid):
 def getAllInformationFirst(): # 第一次获取信息时调用这个函数, 出现异常直接结束运行
     gcu1=getGlobalValue('gcu1')
     gcu2=getGlobalValue('gcu2')
+    if(getTime()>=getGlobalValue('startTime')):
+        gcu2=getGlobalValue('gcu22')
     gcu3=getGlobalValue('gcu3')
     eti=getGlobalValue('eti')
     url=quote(gcu2+eti+gcu3,encoding='utf-8')
@@ -81,6 +83,8 @@ def getAllInformation(): # 后续循环时调用这个函数, 出现异常直接
     # 这里先不设置循环, 后面将这个函数包在另一个函数里, 在那里设置循环
     gcu1=getGlobalValue('gcu1')
     gcu2=getGlobalValue('gcu2')
+    if(getTime()>=getGlobalValue('startTime')):
+        gcu2=getGlobalValue('gcu22')
     gcu3=getGlobalValue('gcu3')
     eti=getGlobalValue('eti')
     url=quote(gcu2+eti+gcu3,encoding='utf-8')
@@ -96,19 +100,23 @@ def getAllInformation(): # 后续循环时调用这个函数, 出现异常直接
         re=r['text']['data']
     except:
         return -1
+    # print(json.dumps(r['text'],ensure_ascii=False).encode('gb2312').decode('gb2312'))
     return r['text']
 
 
-def getSelectedCoursesId(AllInformation):
+def getSelectedCourses(AllInformation):
     all=AllInformation['data']["electTurnResult"]
+    electTurnId=getGlobalValue('eti')
     l=[]
     for one in all:
-        l.append(one['courseId'])
+        # l.append(one['courseId'])
+        if(electTurnId==one["electTurnId"] and str(one["electStatus"])=='4'):
+            l.append(one["lessonTaskId"])
     return l
 
-def selectOneCourse(courseId):
+def selectOneCourse(lessonTaskId):
     while True:
-        status=getGlobalValue(courseId)
+        status=getGlobalValue(lessonTaskId)
         if(not status[1]):
             time.sleep(0.01)
             continue
@@ -164,17 +172,17 @@ def keepCookie():
         time.sleep(30)
 
 
-def isSelected(courseId):
+def isSelected(lessonTaskId):
     allInfo=getGlobalValue('allInfo')
-    selectedCoursesId=getSelectedCoursesId(allInfo)
-    return courseId in selectedCoursesId
+    selectedCourses=getSelectedCourses(allInfo)
+    return lessonTaskId in selectedCourses
 
 
-def hasSpace(courseId):
+def hasSpace(lessonTaskId):
     allInfo=deepcopy(getGlobalValue('allInfo'))
     allInfo=allInfo['data']["lessonTasks"]
     for one in allInfo:
-        if(one["courseId"]==courseId):
+        if(one["lessonTaskId"]==lessonTaskId):
             maxNum=int(one["maxNum"])
             stuNum=int(one["studentNum"])
             return stuNum<maxNum
@@ -200,33 +208,33 @@ def mainControl():
         if(not getGlobalValue('newMsg')):
             time.sleep(0.01)
             continue
-        courses=getGlobalValue('courses')
+        courses=getGlobalValue('courses') # courses 是 lessonTaskId 的数组 
         setGlobalValue('newMsg',False)
-        for cid in courses:
-            if(getGlobalValue(cid)[1]):
+        for ltid in courses:
+            if(getGlobalValue(ltid)[1]):
                 # canSelect=True, 人数满、已选成功 满足任意一个即停止
-                if(isSelected(cid)):
-                    info=getGlobalValue(cid)
+                if(isSelected(ltid)):
+                    info=getGlobalValue(ltid)
                     info=deepcopy(info)
                     print(str(getTime())+': '+info[2]+' 选课成功')
                     info[1]=False
-                    setGlobalValue(cid,info)
+                    setGlobalValue(ltid,info)
                     continue
-                if(not hasSpace(cid)):
-                    info=getGlobalValue(cid)
+                if(not hasSpace(ltid)):
+                    info=getGlobalValue(ltid)
                     info=deepcopy(info)
                     print(str(getTime())+': '+info[2]+' 选课失败')
                     info[1]=False
-                    setGlobalValue(cid,info)
+                    setGlobalValue(ltid,info)
                     continue
-            if(not getGlobalValue(cid)[1]):
+            if(not getGlobalValue(ltid)[1]):
                 # canSelect=False, 未选择、有空位 两者同时满足才开始
-                if( (not isSelected(cid)) and hasSpace(cid)):
-                    info=getGlobalValue(cid)
+                if( (not isSelected(ltid)) and hasSpace(ltid)):
+                    info=getGlobalValue(ltid)
                     info=deepcopy(info)
                     print(str(getTime())+': '+info[2]+' 发现空位')
                     info[1]=True
-                    setGlobalValue(cid,info)
+                    setGlobalValue(ltid,info)
                     continue
 
 
