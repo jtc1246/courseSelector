@@ -167,15 +167,15 @@ def luckyDraw(jsessionid:str,courses:list):
     check(jsessionid)
     all=deepcopy(getAllInformationFirst())
     all=all['data']["lessonTasks"]
-    cids=[]
+    ltids=[]
     isExit=False
     isFound=False
     for c in courses:
         isFound=False
         for one in all:
             if(one["lessonClassName"].find(c)>=0):
-                cids.append(one['courseId'])
-                setGlobalValue(one['courseId'],[one['electTurnLessonTaskId'],True,c,one['lessonTaskId']])
+                ltids.append(one["lessonTaskId"])
+                setGlobalValue(one["lessonTaskId"],[one['electTurnLessonTaskId'],True,c,one['lessonTaskId']])
                 isFound=True
                 break
         if(not isFound):
@@ -183,14 +183,14 @@ def luckyDraw(jsessionid:str,courses:list):
             print('未找到该课程: '+c)
     if(isExit):
         print('存在未找到的课程, 程序已结束运行')
-    cids=tuple(cids)
-    setGlobalValue('courses',cids)
-    for i in cids:
+    ltids=tuple(ltids)
+    setGlobalValue('courses',ltids)
+    for i in ltids:
         thread.start_new_thread(selectOneCourseLucky,(i,))
     time.sleep(10)
     dic={True:'选课成功',False:'选课失败'}
     getAllInformationFirst()
-    for i in cids:
+    for i in ltids:
         print(getGlobalValue(i)[2]+': '+dic[isSelected(i)])
     os._exit(0)
 

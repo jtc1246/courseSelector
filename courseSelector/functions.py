@@ -133,8 +133,8 @@ def selectOneCourse(lessonTaskId):
 
 
 
-def selectOneCourseLucky(courseId):
-    status=getGlobalValue(courseId)
+def selectOneCourseLucky(lessonTaskId):
+    status=getGlobalValue(lessonTaskId)
     # 以下是要选的情况
     electTurnLessonTaskId=status[0]
     lessonTaskId=status[3]
@@ -145,6 +145,7 @@ def selectOneCourseLucky(courseId):
     body="jsonString="+quote(jss,encoding='utf-8')
     header['Content-Length']=str(len(body))
     url=getGlobalValue('scul')+str(getTime())
+    # print([url,header,body])
     r=http(url,Method='POST',Header=header,Timeout=1000,BODY=body)
 
 
