@@ -72,6 +72,7 @@ def waitEmptySpace(jsessionid:str,courses:list,threadNum:int=5):
             print('未找到该课程: '+c)
     if(isExit):
         print('存在未找到的课程, 程序已结束运行')
+        os._exit(-1)
     ltids=tuple(ltids)
     print(ltids)
     setGlobalValue('courses',ltids)
@@ -130,6 +131,7 @@ def fastSelect(jsessionid:str,courses:list,threadNum:int=10):
             print('未找到该课程: '+c)
     if(isExit):
         print('存在未找到的课程, 程序已结束运行')
+        os._exit(-1)
     ltids=tuple(ltids)
     print(ltids)
     setGlobalValue('courses',ltids)
@@ -180,6 +182,7 @@ def luckyDraw(jsessionid:str,courses:list):
             print('未找到该课程: '+c)
     if(isExit):
         print('存在未找到的课程, 程序已结束运行')
+        os._exit(-1)
     ltids=tuple(ltids)
     setGlobalValue('courses',ltids)
     for i in ltids:
