@@ -35,6 +35,6 @@
 
     使用要求: Python 3, 必须保证您的设备时间准确
     License: GPL v2
-    原理: 抓包分析 Http 请求，然后用 Python 模拟发送 Http 请求, 具体请见https://github.com/jtc1246/courseSelector/blob/main/others/%E6%8E%A5%E5%8F%A3%E5%88%86%E6%9E%90.pdf
+    原理: 抓包分析 Http 请求，然后用 Python 模拟发送 Http 请求, 具体请见 https://github.com/jtc1246/courseSelector/blob/main/others/%E6%8E%A5%E5%8F%A3%E5%88%86%E6%9E%90.pdf
     联系方式: 邮箱:jtc1246@outlook.com, 微信:15021805270, 手机号:15021805270
 
