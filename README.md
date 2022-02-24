@@ -33,7 +33,7 @@
 
 ## 其它说明
 
-    使用要求: Python 3
+    使用要求: Python 3, 必须保证您的设备时间准确
     License: GPL v2
     原理: 抓包分析 Http 请求，然后用 Python 模拟发送 Http 请求
     联系方式: 邮箱:jtc1246@outlook.com, 微信:15021805270, 手机号:15021805270
