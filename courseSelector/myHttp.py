@@ -95,9 +95,6 @@ def getTime():
     return t
 
 
-
-
-
 def toJson(Text):
     text=Text
     i=0
@@ -115,14 +112,10 @@ def toJson(Text):
 # 格式示例: "2022-01-17 10:00", 输入为北京时间, 输出为 Unix 毫秒
 # 北京时间 2022-01-17 10:00 对应 Unix 1642384800 (s)
 def toUnix(timeStr):
-    print('test1')
     tmp=time.strptime("2022-01-17 10:00:00",'%Y-%m-%d %H:%M:%S')
     tmp=time.mktime(tmp)
     diff=tmp-1642384800
-    print(diff)
     timeStr=timeStr+':00'
     b=time.strptime(timeStr,'%Y-%m-%d %H:%M:%S')
     c=time.mktime(b)-diff
     return int(c*1000)
-
-
