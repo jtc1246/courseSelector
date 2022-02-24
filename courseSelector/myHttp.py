@@ -90,10 +90,12 @@ def http(url:str,Method:str="GET",Header:dict={},Timeout:int=0,ToJSON:bool=True,
     return resp
 
 def getTime():
-    global globalVar
     t = time.time()
     t = int(1000 * t)
     return t
+
+
+
 
 
 def toJson(Text):
@@ -110,11 +112,17 @@ def toJson(Text):
     return text
 
 
-# 格式示例: "2022-01-17 10:00"
+# 格式示例: "2022-01-17 10:00", 输入为北京时间, 输出为 Unix 毫秒
+# 北京时间 2022-01-17 10:00 对应 Unix 1642384800 (s)
 def toUnix(timeStr):
+    print('test1')
+    tmp=time.strptime("2022-01-17 10:00:00",'%Y-%m-%d %H:%M:%S')
+    tmp=time.mktime(tmp)
+    diff=tmp-1642384800
+    print(diff)
     timeStr=timeStr+':00'
     b=time.strptime(timeStr,'%Y-%m-%d %H:%M:%S')
-    c=time.mktime(b)
+    c=time.mktime(b)-diff
     return int(c*1000)
 
 

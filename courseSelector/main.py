@@ -43,7 +43,7 @@ def printCourseList(jsessionid:str):
         f.write(one["lessonClassName"])
         f.write('\n')
     f.close()
-    print('获取课程列表成功, 请打开当前文件夹中的 course.txt 查看')
+    print('获取课程列表成功, 请打开当前文件夹中的 courses.txt 查看')
     
 def waitEmptySpace(jsessionid:str,courses:list,threadNum:int=5):
     # 初始化部分
@@ -131,6 +131,7 @@ def fastSelect(jsessionid:str,courses:list,threadNum:int=10):
     if(isExit):
         print('存在未找到的课程, 程序已结束运行')
     ltids=tuple(ltids)
+    print(ltids)
     setGlobalValue('courses',ltids)
     # 初始化结束
     thread.start_new_thread(testInternetConnection,())
