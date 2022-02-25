@@ -46,10 +46,12 @@ def waitEmptySpace(jsessionid:str,courses:list,threadNum:int=5):
     # 初始化部分
     if(threadNum<=0):
         print('线程数必须大于 0')
+        sleep(0.5)
         os._exit(-1)
     check(jsessionid)
     if(getGlobalValue('mode').find('arly')==-1):
         print('本轮选课不是 Early Bird, 不适用本软件')
+        sleep(0.5)
         os._exit(-1)
     all=deepcopy(getAllInformationFirst())
     all=all['data']["lessonTasks"]
@@ -69,6 +71,7 @@ def waitEmptySpace(jsessionid:str,courses:list,threadNum:int=5):
             print('未找到该课程: '+c)
     if(isExit):
         print('存在未找到的课程, 程序已结束运行')
+        sleep(0.5)
         os._exit(-1)
     ltids=tuple(ltids)
     print(ltids)
@@ -93,9 +96,11 @@ def waitEmptySpace(jsessionid:str,courses:list,threadNum:int=5):
                 isAllSelected=False
         if(isAllSelected):
             print('要选课课程已经全部选择成功, 程序结束运行')
+            sleep(0.5)
             os._exit(0)
         if(getTime()>getGlobalValue('endTime')+10000):
             print('选课已经结束, 程序结束运行')
+            sleep(0.5)
             os._exit(0)
 
 
@@ -105,10 +110,12 @@ def fastSelect(jsessionid:str,courses:list,threadNum:int=10):
     # 初始化部分
     if(threadNum<=0):
         print('线程数必须大于 0')
+        sleep(0.5)
         os._exit(-1)
     check(jsessionid)
     if(getGlobalValue('mode').find('arly')==-1):
         print('本轮选课不是 Early Bird, 不适用本软件')
+        sleep(0.5)
         os._exit(-1)
     all=deepcopy(getAllInformationFirst())
     all=all['data']["lessonTasks"]
@@ -128,6 +135,7 @@ def fastSelect(jsessionid:str,courses:list,threadNum:int=10):
             print('未找到该课程: '+c)
     if(isExit):
         print('存在未找到的课程, 程序已结束运行')
+        sleep(0.5)
         os._exit(-1)
     ltids=tuple(ltids)
     print(ltids)
@@ -152,9 +160,11 @@ def fastSelect(jsessionid:str,courses:list,threadNum:int=10):
                 isAllSelected=False
         if(isAllSelected):
             print('要选课课程已经全部选择成功, 程序结束运行')
+            sleep(0.5)
             os._exit(0)
         if(getTime()>getGlobalValue('endTime')+10000):
             print('选课已经结束, 程序结束运行')
+            sleep(0.5)
             os._exit(0)
 
 
@@ -179,6 +189,7 @@ def luckyDraw(jsessionid:str,courses:list):
             print('未找到该课程: '+c)
     if(isExit):
         print('存在未找到的课程, 程序已结束运行')
+        sleep(0.5)
         os._exit(-1)
     ltids=tuple(ltids)
     setGlobalValue('courses',ltids)
@@ -189,5 +200,6 @@ def luckyDraw(jsessionid:str,courses:list):
     getAllInformationFirst()
     for i in ltids:
         print(getGlobalValue(i)[2]+': '+dic[isSelected(i)])
+    sleep(0.5)
     os._exit(0)
 

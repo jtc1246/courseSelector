@@ -3,7 +3,7 @@ import time,json
 from copy import deepcopy
 from .myHttp import *
 import os
-
+from time import sleep
 
 # 格式:
 # {"electTurnId":"158C59EB-C733-4C3A-8E78-C314DCEC70BF","autoElect":true,"lessonTasks":["A57528CC-AECA-4266-874E-039386315A2A"]}
@@ -22,13 +22,20 @@ def getElectTurnId():
     r=http(url,Header=header,Timeout=1500)
     if(r['status']==-1):
         print('无网络连接, 程序已结束运行')
+        sleep(0.5)
         os._exit(-1)
     if(r['status']==-2):
         print('连接服务器超时, 程序已结束运行')
+        sleep(0.5)
         os._exit(-1)
     if(r['code']==302):
         print("Cookie 无效, 程序已结束运行")
+        sleep(0.5)
         os._exit(-1)
+    if(len(r['text'])==0):
+        print('无正在进行的选课，程序结束运行')
+        sleep(0.5)
+        os._exit(0)
     eti=r['text'][0]["electTurnId"]
     mode=r['text'][0]["electModeName"]
     name=r['text'][0]["electTurnName"]
@@ -67,12 +74,15 @@ def getAllInformationFirst(): # 第一次获取信息时调用这个函数, 出�
     r=http(url,Header=header,Timeout=3000)
     if(r['status']==-1):
         print('无网络连接, 程序已结束运行')
+        sleep(0.5)
         os._exit(-1)
     if(r['status']==-2):
         print('连接服务器超时, 程序已结束运行')
+        sleep(0.5)
         os._exit(-1)
     if(r['code']==302):
         print("Cookie 失效, 请重新设置 Cookie, 程序已结束运行")
+        sleep(0.5)
         os._exit(-1)
     setGlobalValue('allInfo',r['text'])
     setGlobalValue('newMsg',True)
@@ -93,6 +103,7 @@ def getAllInformation(): # 后续循环时调用这个函数, 出现异常直接
     r=http(url,Header=header,Timeout=3000)
     if(r['code']==302):
         print(str(getTime())+": Cookie 失效, 请重新设置 Cookie, 程序已结束运行")
+        sleep(0.5)
         os._exit(-1)
     if(r['status']!=0 and r['status']!=3):
         return -1
@@ -166,6 +177,7 @@ def keepCookie():
         r=http(url,Header=header,ToJSON=False)
         if(r['code']==302):
             print(str(getTime())+": Cookie 失效, 请重新设置 Cookie, 程序已结束运行")
+            sleep(0.5)
             os._exit(-1)
         time.sleep(30)
 
