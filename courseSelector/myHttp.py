@@ -3,6 +3,8 @@ import urllib3 as _myHttp_urllib3
 import urllib3.exceptions as _myHttp_urllib3_exceptions
 import time,json
 from urllib.parse import quote
+import datetime
+from datetime import timezone
 def testInternet():
     http1=_myHttp_urllib3.PoolManager()
     try:
@@ -111,11 +113,21 @@ def toJson(Text):
 
 # 格式示例: "2022-01-17 10:00", 输入为北京时间, 输出为 Unix 毫秒
 # 北京时间 2022-01-17 10:00 对应 Unix 1642384800 (s)
-def toUnix(timeStr):
-    tmp=time.strptime("2022-01-17 10:00:00",'%Y-%m-%d %H:%M:%S')
-    tmp=time.mktime(tmp)
-    diff=tmp-1642384800
+# def toUnix(timeStr):
+    # tmp=time.strptime("2022-01-17 10:00:00",'%Y-%m-%d %H:%M:%S')
+    # tmp=time.mktime(tmp)
+    # diff=tmp-1642384800
+    # timeStr=timeStr+':00'
+    # b=time.strptime(timeStr,'%Y-%m-%d %H:%M:%S')
+    # c=time.mktime(b)-diff
+    # return int(c*1000)
+
+
+def toUnix(timeStr:str):
     timeStr=timeStr+':00'
-    b=time.strptime(timeStr,'%Y-%m-%d %H:%M:%S')
-    c=time.mktime(b)-diff
-    return int(c*1000)
+    dt = datetime.datetime.strptime(timeStr, '%Y-%m-%d %H:%M:%S').replace(tzinfo=timezone.utc)
+    t= int(1000*dt.timestamp())-8*60*60*1000
+    return t
+
+
+
