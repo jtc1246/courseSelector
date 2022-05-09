@@ -115,11 +115,14 @@ def getAllInformation(): # 后续循环时调用这个函数, 出现异常直接
 
 
 def getSelectedCourses(AllInformation):
+    # f=open('./testt.txt','w')
+    # f.write(json.dumps(AllInformation))
+    # f.close()
     all=AllInformation['data']["electTurnResult"]
     electTurnId=getGlobalValue('eti')
     l=[]
     for one in all:
-        if(electTurnId==one["electTurnId"] and str(one["electStatus"])=='4'):
+        if(electTurnId==one["electTurnId"] and str(one["electStatus"]) in ['4','0']):
             l.append(one["lessonTaskId"])
     return l
 
@@ -138,7 +141,8 @@ def selectOneCourse(lessonTaskId):
         body="jsonString="+quote(jss,encoding='utf-8')
         header['Content-Length']=str(len(body))
         url=getGlobalValue('scu')+str(getTime())
-        r=http(url,Method='POST',Header=header,Timeout=500,BODY=body)
+        r=http(url,Method='POST',Header=header,Timeout=1500,BODY=body)
+        # print(r)
 
 
 
@@ -155,6 +159,7 @@ def selectOneCourseLucky(lessonTaskId):
     header['Content-Length']=str(len(body))
     url=getGlobalValue('scul')+str(getTime())
     r=http(url,Method='POST',Header=header,Timeout=1000,BODY=body)
+    # print(r)
 
 
 def testInternetConnection():
@@ -185,6 +190,7 @@ def keepCookie():
 def isSelected(lessonTaskId):
     allInfo=getGlobalValue('allInfo')
     selectedCourses=getSelectedCourses(allInfo)
+    # print(selectedCourses)
     return lessonTaskId in selectedCourses
 
 

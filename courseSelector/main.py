@@ -152,6 +152,7 @@ def fastSelect(jsessionid:str,courses:list,threadNum:int=10):
     for i in ltids:
         for j in range(0,threadNum):
             thread.start_new_thread(selectOneCourse,(i,))
+            sleep(0.4)
     while True:
         time.sleep(10)
         isAllSelected=True
