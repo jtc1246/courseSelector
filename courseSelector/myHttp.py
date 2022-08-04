@@ -5,6 +5,12 @@ import time,json
 from urllib.parse import quote
 import datetime
 from datetime import timezone
+
+
+import warnings
+warnings.filterwarnings("ignore")
+
+
 def testInternet():
     http1=_myHttp_urllib3.PoolManager()
     try:
