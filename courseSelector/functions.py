@@ -108,7 +108,8 @@ def getAllInformation(): # 后续循环时调用这个函数, 出现异常直接
     if(r['status']!=0 and r['status']!=3):
         return -1
     try:
-        re=r['text']['data']
+        re=r['text']['data']["electTurnResult"]
+        re=r['text']['data']["lessonTasks"]
     except:
         return -1
     return r['text']

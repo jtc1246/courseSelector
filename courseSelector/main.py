@@ -148,9 +148,10 @@ def fastSelect(jsessionid:str,courses:list,threadNum:int=10):
         time.sleep(0.001*(-currentTime+getGlobalValue('startTime')-10000))
     for i in range(0,3):
         thread.start_new_thread(getInfoMain,())
+        time.sleep(1.4/3)
     thread.start_new_thread(mainControl,())
-    for i in ltids:
-        for j in range(0,threadNum):
+    for j in range(0,threadNum):
+        for i in ltids:
             thread.start_new_thread(selectOneCourse,(i,))
             sleep(0.4)
     while True:
@@ -203,4 +204,5 @@ def luckyDraw(jsessionid:str,courses:list):
         print(getGlobalValue(i)[2]+': '+dic[isSelected(i)])
     sleep(0.5)
     os._exit(0)
+
 
