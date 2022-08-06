@@ -1,4 +1,4 @@
-# CourseSelector v1.0.7
+# CourseSelector v1.0.8
 
 ## 上海交通大学密西根学院自动选课软件
 
@@ -20,6 +20,7 @@
     fastSelect(jsessionid:str,courses:list,threadNum:int=10): 在 Early Bird 开始时，发送大量请求快速选课
     luckyDraw(jsessionid:str,courses:list): 在 Lucky Draw 模式下，选择有时间冲突的课程
     courses 参数要求: 数组，里面的每一项为要选课的课程描述（就是printCourseList输出的课程描述）
+    注: 请勿多线程运行本程序中的函数, 会导致全局变量冲突
 
 ### 3. 关于 Cookie：
     先在浏览器里登陆好，刷新一下，确定是已登陆状态，在浏览器的设置里复制 Cookie 中 JSESSIONID 这一项，粘贴到程序里
