@@ -10,7 +10,7 @@ __all__=[
 ]
 
 
-__version__='1.0.7'
+__version__='1.0.8'
 __license__='GPL-2.0 License'
 __author__='Tiancheng Jiao'
 __url__='https://github.com/jtc1246/courseSelector'

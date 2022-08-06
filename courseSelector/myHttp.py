@@ -9,10 +9,11 @@ from datetime import timezone
 
 import warnings
 warnings.filterwarnings("ignore")
+http1=_myHttp_urllib3.PoolManager()
 
 
 def testInternet():
-    http1=_myHttp_urllib3.PoolManager()
+    # http1=_myHttp_urllib3.PoolManager()
     try:
         r=http1.request("GET","https://www.baidu.com",timeout=1.5,retries=False)
     except:
@@ -24,7 +25,7 @@ def http(url:str,Method:str="GET",Header:dict={},Timeout:int=0,ToJSON:bool=True,
     # status:  1: 不是 UTF-8 编码, text 返回空字符串  2: 不是json格式(在toJSON=True的前提下)
     # status:  3: 对方网站不支持https, 但是却使用了https连接, 这种情况会自动切换为http连接, 若此次status不为0, 返回该status, 若为0, 返回3
     backup=[url,Method,Header,Timeout,ToJSON,BODY,Decode]
-    http1=_myHttp_urllib3.PoolManager()
+    # http1=_myHttp_urllib3.PoolManager()
     global globalVar
     if(Timeout==0):
         Timeout=500+500*getGlobalValue('device')

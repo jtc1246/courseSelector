@@ -13,6 +13,7 @@ def help():
 
 
 def check(jsessionid:str):
+    resetAll()
     setCookie(jsessionid)
     getElectTurnId()
     print('当前选课名称为: '+getGlobalValue('electName'))
@@ -23,6 +24,7 @@ def check(jsessionid:str):
 
 
 def printCourseList(jsessionid:str):
+    resetAll()
     check(jsessionid)
     getElectTurnId()
     all=getAllInformationFirst()
@@ -44,6 +46,7 @@ def printCourseList(jsessionid:str):
     
 def waitEmptySpace(jsessionid:str,courses:list,threadNum:int=5):
     # 初始化部分
+    resetAll()
     if(threadNum<=0):
         print('线程数必须大于 0')
         sleep(0.5)
@@ -108,6 +111,7 @@ def waitEmptySpace(jsessionid:str,courses:list,threadNum:int=5):
 
 def fastSelect(jsessionid:str,courses:list,threadNum:int=10):
     # 初始化部分
+    resetAll()
     if(threadNum<=0):
         print('线程数必须大于 0')
         sleep(0.5)
@@ -172,6 +176,7 @@ def fastSelect(jsessionid:str,courses:list,threadNum:int=10):
 
 # 在 Lucky Draw 模式下选时间冲突的课程
 def luckyDraw(jsessionid:str,courses:list):
+    resetAll()
     check(jsessionid)
     all=deepcopy(getAllInformationFirst())
     all=all['data']["lessonTasks"]
