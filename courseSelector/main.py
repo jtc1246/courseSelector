@@ -2,6 +2,7 @@ from .myHttp import *
 from .functions import *
 from .globalVariable import *
 import _thread as thread
+from.login import login
 
 
 def help():
@@ -211,3 +212,46 @@ def luckyDraw(jsessionid:str,courses:list):
     os._exit(0)
 
 
+def check_byJaccount(username:str):
+    cookie=login(username)
+    if(cookie==''):
+        print('登录失败')
+        return
+    print(f'登录成功, 您的 Cookie 为: {cookie}')
+    check(cookie)
+
+
+def printCourseList_byJaccount(username:str):
+    cookie=login(username)
+    if(cookie==''):
+        print('登录失败')
+        return
+    print(f'登录成功, 您的 Cookie 为: {cookie}')
+    printCourseList(cookie)
+
+
+def waitEmptySpace_byJaccount(username:str,courses:list,threadNum:int=5):
+    cookie=login(username)
+    if(cookie==''):
+        print('登录失败')
+        return
+    print(f'登录成功, 您的 Cookie 为: {cookie}')
+    waitEmptySpace(cookie,courses,threadNum)
+
+
+def fastSelect_byJaccount(username:str,courses:list,threadNum:int=10):
+    cookie=login(username)
+    if(cookie==''):
+        print('登录失败')
+        return
+    print(f'登录成功, 您的 Cookie 为: {cookie}')
+    fastSelect(cookie,courses,threadNum)
+
+
+def luckyDraw_byJaccount(username:str,courses:list):
+    cookie=login(username)
+    if(cookie==''):
+        print('登录失败')
+        return
+    print(f'登录成功, 您的 Cookie 为: {cookie}')
+    luckyDraw(cookie,courses)

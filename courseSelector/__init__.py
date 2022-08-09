@@ -1,4 +1,4 @@
-from .main import help,check,printCourseList,waitEmptySpace,fastSelect,luckyDraw
+from .main import help,check,printCourseList,waitEmptySpace,fastSelect,luckyDraw,check_byJaccount,printCourseList_byJaccount,waitEmptySpace_byJaccount,fastSelect_byJaccount,luckyDraw_byJaccount
 
 __all__=[
     'help',
@@ -6,11 +6,16 @@ __all__=[
     'printCourseList',
     'waitEmptySpace',
     'fastSelect',
-    'luckyDraw'
+    'luckyDraw',
+    'check_byJaccount',
+    'printCourseList_byJaccount',
+    'waitEmptySpace_byJaccount',
+    'fastSelect_byJaccount',
+    'luckyDraw_byJaccount'
 ]
 
 
-__version__='1.0.8'
+__version__='1.1.0'
 __license__='GPL-2.0 License'
 __author__='Tiancheng Jiao'
 __url__='https://github.com/jtc1246/courseSelector'
