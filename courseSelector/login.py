@@ -2,7 +2,7 @@ from PIL import Image
 from time import sleep
 from selenium import webdriver # 版本确定为 3.11.0
 from _thread import start_new_thread
-import os,stat,shutil,platform,ddddocr,myBasics
+import os,stat,shutil,platform,ddddocr,myBasics,pwinput
 from phantomjs_packages import phantomjs_mac,phantomjs_windows,phantomjs_linux
 
 
@@ -39,7 +39,11 @@ def forceDelete(fileName:str):
 def _getPassword():
     global _password
     print('本程序不会将您的密码发送给除 jaccount.sjtu.edu.cn 以外的任何网站或服务器, 也不会以任何形式在本地保存, 请放心输入。')
-    i=input('请输入密码: ')
+    try:
+        i=pwinput.pwinput('请输入密码: ')
+    except:
+        print('\nWarning: Jupyter notebook 中输入密码时不能显示星号, 建议您在 终端/cmd 中使用本软件。')
+        i=input('请输入密码: ')
     if(len(i)==0):
         i='1'
     _password=i
@@ -47,7 +51,11 @@ def _getPassword():
 
 def _getPassword_retry():
     global _password
-    i=input('密码错误, 请重新输入: ')
+    try:
+        i=pwinput.pwinput('密码错误, 请重新输入: ')
+    except:
+        print('\nWarning: Jupyter notebook 中输入密码时不能显示星号, 建议您在 终端/cmd 中使用本软件。')
+        i=input('密码错误, 请重新输入: ')
     if(len(i)==0):
         i='1'
     _password=i

@@ -2,7 +2,7 @@ from .myHttp import *
 from .functions import *
 from .globalVariable import *
 import _thread as thread
-from.login import login
+from .login import login
 
 
 def help():
