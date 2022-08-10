@@ -130,10 +130,10 @@ def login(username:str):
     _username=username
     warn=driver.find_element_by_id('div_warn')
     reason=warn.text
-    if(reason.find('用户名和密码')>=0):
+    if(reason.find('用户名和密码')>=0 or reason.find('username')>=0):
         _retries+=1
         return retry_password()
-    elif(reason.find('验证码')>=0):
+    elif(reason.find('验证码')>=0 or reason.find('captcha')>=0):
         _retries+=1
         return retry_captcha()
     else:
@@ -200,10 +200,10 @@ def retry_password():
         return ''
     warn=driver.find_element_by_id('div_warn')
     reason=warn.text
-    if(reason.find('用户名和密码')>=0):
+    if(reason.find('用户名和密码')>=0 or reason.find('username')>=0):
         _retries+=1
         return retry_password()
-    elif(reason.find('验证码')>=0):
+    elif(reason.find('验证码')>=0 or reason.find('captcha')>=0):
         _retries+=1
         return retry_captcha()
     else:
@@ -255,10 +255,10 @@ def retry_captcha():
         return ''
     warn=driver.find_element_by_id('div_warn')
     reason=warn.text
-    if(reason.find('用户名和密码')>=0):
+    if(reason.find('用户名和密码')>=0 or reason.find('username')>=0):
         _retries+=1
         return retry_password()
-    elif(reason.find('验证码')>=0):
+    elif(reason.find('验证码')>=0 or reason.find('captcha')>=0):
         _retries+=1
         return retry_captcha()
     else:
