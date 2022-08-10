@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='courseSelector',
-    version='1.1.1',
+    version='1.1.2',
     author='Tiancheng Jiao',
     author_email='jtc1246@outlook.com',
     url='https://github.com/jtc1246/courseSelector',
