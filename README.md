@@ -21,7 +21,7 @@
     
     check(jsessionid:str):  获取选课信息
     
-    printCourseList(jsessionid:str):  获取所有课程的信息
+    printCourseList(jsessionid:str):  获取所有课程的信息    格式可见 others/courses.txt
     
     waitEmptySpace(jsessionid:str,courses:list,threadNum:int=5):  在 Early Bird 且已选满的情况下，等有人取消时自动选择
     
