@@ -1,0 +1,103 @@
+课程名称             上课教师                 课程描述
+大学化学实验 | Ting Sun | 大学化学实验SP2022 Online 线上
+法国文化 | Aline Chevalier  | 法国文化SP2022 Hybrid 混合
+创造力 | En-Ling Chiao | CreativitySP2022 On-site 线下
+可持续发展设计 | Kwee Yan Teh | 可持续发展设计SP2022 Hybrid 混合
+记忆：理解20世纪中国史的新路径 | Chan Yang | 记忆：理解20世纪中国史的新路径SP2022 On-site 线下
+数据科学概论 | 张艾琳 | 数据科学概论SP2022 Hybrid 混合
+工程专业与职业概论 | Kwee Yan Teh | Introduction to Engineering Professions and CareersSP2022 Hybrid 混合
+多面向的英帝国史 | 余琼 | The Empire with Many Faces- History of the British EmpireSP2022 On-site 线下
+体育（2） | 吴富勇 | 体育（2）SP2022-1 男生网球上午 吴富勇 On-site 线下
+体育（2） | 吴爱平 | 体育（2）SP2022-2 男生乒乓球上午 吴爱平 On-site 线下
+体育（2） | 张健  | 体育（2）SP2022-5 男生篮球上午 张健 On-site线下
+体育（2） | 张倩倩 | 体育（2）SP2022-6 男生武术下午 张倩倩 On-site线下
+体育（2） | 王学彬 | 体育（2）SP2022-4 男生篮球下午 王学彬 On-site 线下
+体育（2） | 孙涵 | 体育（2）SP2022-7 女生篮球下午 孙涵 On-site 线下
+体育（2） | 刘畅 | 体育（2）SP2022-3 男生排球下午 刘畅 On-site 线下
+体育（4） | 张哲敏 | 体育（4）SP2022-1 男生棒球上午 张哲敏 On-site 线下
+体育（4） | 宋顺  | 体育（4）SP2022-2 男生橄榄球上午 宋顺 On-site 线下
+体育（2） | 眭禄 | 体育（2）SP2022-8 女生形体修塑上午 眭禄 On-site 线下
+体育（4） | 陈刚  | 体育（4）SP2022-3 男生篮球上午 陈刚 On-site 线下
+体育（4） | 缪律 | 体育（4）SP2022-4 男生足球下午 缪律 On-site 线下
+体育（4） |  卢兰 | 体育（4）SP2022-5 男生羽毛球下午 卢兰 On-site 线下
+体育（4） | 刘美香 | 体育（4）SP2022-7 女生羽毛球上午 刘美香 On-site 线下
+体育（4） | 于红妍  | 体育（4）SP2022-8 女生篮球上午 于红妍 On-site 线下
+体育（4） | 尹梅 | 体育（4）SP2022-9女生舞蹈新元素下午 尹梅 On-site 线下
+体育（4） | 陈天乐 | 体育（4）SP2022-6 男生篮球下午 陈天乐 On-site 线下
+大学生心理健康 | None | 大学生心理健康SP2022-Freshmen&Sophomores
+数据科学入门(工程) | 张艾琳 | Data Science for Future EngineersSP2022 Hybrid 混合
+思想道德修养与法律基础 | 杨卫华 | 思想道德修养与法律基础SP2022-1 Weihua Yang On-site 线下
+思想道德修养与法律基础 | 杨卫华 | 思想道德修养与法律基础SP2022-2 Weihua Yang On-site 线下
+军事理论 | 徐国斌,刘延 | 军事理论SP2022-3 Guobin Xu & Yan Liu On-site 线下
+军事理论 | 徐国斌,刘延 | 军事理论SP2022-2 Guobin Xu & Yan Liu On-site 线下
+思想道德修养与法律基础 | 李瑞奇 | 思想道德修养与法律基础SP2022-3 Ruiqi Li On-site 线下
+马克思主义基本原理 | 邹汉阳 | 马克思主义基本原理SP2022-3 Hanyang Zou On-site 线下
+马克思主义基本原理 | 王旭荣 | 马克思主义基本原理SP2022-2 Xurong Wang On-site 线下
+形势与政策 | 吴钰蔚 | 形势与政策SP2022-1 Freshmen
+军事理论 | 闫成 | 军事理论SP2022-1 Cheng Yan On-site 线下
+马克思主义基本原理 | 邵艳梅 | 马克思主义基本原理SP2022-1 Yanmei Shao On-site 线下
+毛泽东思想和中国特色社会主义理论体系概论 | 孔德猛 | 毛泽东思想和中国特色社会主义理论体系概论SP2022-1 On-site 线下
+毛泽东思想和中国特色社会主义理论体系概论 | 孔德猛 | 毛泽东思想和中国特色社会主义理论体系概论SP2022-2 On-site 线下
+形势与政策 | 刘通 | 形势与政策SP2022-2 Sophomore
+大学化学实验（J类） | Ting Sun | 大学化学实验（J类）SP2022-10 18:00-21:00 (W) On-site 线下
+毛泽东思想和中国特色社会主义理论体系概论 | 孔德猛 | 毛泽东思想和中国特色社会主义理论体系概论SP2022-3 On-site 线下
+大学化学实验（J类） | Ting Sun | 大学化学实验（J类）SP2022-2 8:00-11:00 (Tu) On-site 线下
+大学化学实验（J类） | Ting Sun | 大学化学实验（J类）SP2022-3 13:00-16:00 (Tu) On-site 线下
+大学化学实验（J类） | Ting Sun | 大学化学实验（J类）SP2022-1 8:00-11:00 (Tu) On-site 线下
+大学化学实验（J类） | Ting Sun | 大学化学实验（J类）SP2022-4 13:00-16:00 (Tu) On-site 线下
+大学化学实验（J类） | Ting Sun | 大学化学实验（J类）SP2022-7 8:00-11:00 (W) On-site 线下
+大学化学实验（J类） | Ting Sun | 大学化学实验（J类）SP2022-6 18:00-21:00 (Tu) On-site 线下
+离散数学（J类） | 蔡润泽 | 离散数学（J类）SP2022 Hybrid 混合
+大学化学实验（J类） | Ting Sun | 大学化学实验（J类）SP2022-8 8:00-11:00 (W) On-site 线下
+大学化学实验（J类） | Ting Sun | 大学化学实验（J类）SP2022-5 18:00-21:00 (Tu) On-site 线下
+大学化学实验（J类） | Ting Sun | 大学化学实验（J类）SP2022-9 18:00-21:00 (W) On-site 线下
+科技写作与交流 | Nathaniel Murray | 科技写作与交流SP2022-1 On-site 线下
+信号与系统处理 | 龙泳 | 信号与系统处理SP2022 Hybrid 混合
+高级科技写作与交流 | Nathaniel Murray | 高级科技写作与交流SP2022 On-site 线下
+光子学导论 | 万文杰 | 光子学导论SP2022 On-site 线下
+科技写作与交流 | Nathaniel Murray | 科技写作与交流SP2022-3 On-site 线下
+科技写作与交流 | Nathaniel Murray | 科技写作与交流SP2022-2 On-site 线下
+基础日语（1） | 林子博 | 基础日语（1）SP2022-2 On-site 线下
+工程概率方法 | Horst Hohberger | 工程概率方法SP2022 Hybrid 混合
+金工实习 | 李明建 | 金工实习SP2022 Online 线上
+基础日语（1） | 林子博 | 基础日语（1）SP2022-1 On-site 线下
+全球视野中的中国历史 | 徐彤 | 全球视野中的中国历史SP2022 Hybrid 混合
+设计与制造（J类）（1） | Jaehyung Ju | 设计与制造（J类）（1）SP2022 On-site 线下
+金工实习（1） | 陶波 | 金工实习（1）SP2022 On-site 线下
+固体力学 | Shane Johnson | 固体力学SP2022
+动力学与振动导论 | 沈泳星 | 动力学与振动导论SP2022 Hybrid 混合
+德语（1） | Quanbo Xie | 德语（1）SP2022-1 On-site 线下
+中国研究导论 | 徐彤 | 中国研究导论SP2022 Hybrid 混合
+中国现代文学概述 | 韩蕾 | 中国现代文学概述SP2022 Hybrid 混合
+微积分（2） | 	OLGA DANILKINA | 微积分（2）SP2022 Online 线上
+工程数学B | Horst Hohberger | 工程数学BSP2022 Hybrid 混合
+德语（2） | Quanbo Xie | 德语（2）SP2022-1 On-site 线下
+心理学概论 | En-Ling Chiao | 心理学概论SP2022 On-site 线下
+德语（2） | Quanbo Xie | 德语（2）SP2022-2 On-site 线下
+德语（1） | Quanbo Xie | 德语（1）SP2022-2 On-site 线下
+德语（1） | Quanbo Xie | 德语（1）SP2022-3 On-site 线下
+线性代数 | 	OLGA DANILKINA | 线性代数SP2022 Online 线上
+德语（6） | Quanbo Xie | 德语（6）SP2022 On-site 线下
+英语写作 | 	PETER JOHN WEISE | 英语写作SP2022-11 Peter Weise-Morning  On-site 线下
+品牌管理 | 李杰 | Branding and Brand ManagementSP2022 On-site 线下
+英语写作 | JOELLE ELIZABETH TYBON | 英语写作SP2022-1 Joelle Tybon-Morning On-site 线下
+英语写作 | JOELLE ELIZABETH TYBON | 英语写作SP2022-2 Joelle Tybon-Afternoon On-site 线下
+应用数学分析方法II | Horst Hohberger | 应用数学分析方法IISP2022
+德语（2） | Quanbo Xie | 德语（2）SP2022-3 On-site 线下
+文化与科技 | Irene Wei | 文化与科技SP2022 On-site 线下
+英语写作 | Ryan Thorpe | 英语写作SP2022-4 Ryan Thorpe-Afternoon On-site 线下
+英语写作 | Amalia Jiva | 英语写作SP2022-13 Amalia Jiva-Morning Online 线上
+英语写作 | Kyung MinKim | 英语写作SP2022-6 Kyung Min Kim-Afternoon On-site 线下
+英语写作 | 	PETER JOHN WEISE | 英语写作SP2022-12 Peter Weise-Afternoon On-site 线下
+英语写作 | Ryan Thorpe | 英语写作SP2022-3 Ryan Thorpe-Morning On-site 线下
+英语写作 | Kyung MinKim | 英语写作SP2022-5 Kyung Min Kim-Morning On-site 线下
+英语写作 | Andrew Yang | 英语写作SP2022-9 Andrew Yang-Morning Hybrid 混合
+英语写作 | Andrew Yang | 英语写作SP2022-10 Andrew Yang-Afternoon Hybrid 混合
+英语写作 | MICHELE MARIE CAMPBELL | 英语写作SP2022-8 Michele Campbell-Afternoon  On-site 线下
+英语写作 | MICHELE MARIE CAMPBELL | 英语写作SP2022-7 Michele Campbell-Morning  On-site 线下
+汉语一（下） | 王骏 | 汉语一（下）SP2022 Online 线上
+中国文化概论 | 杜燕 | 中国文化概论SP2022 Online 线上
+汉语四（下） | 郝丽霞 | Chinese Language (level 4 part 2)SP2022 Online 线上
+汉语二（上） | 王骏 | 汉语二（上）SP2022 Online 线上
+汉语五（上） | 郝丽霞 | Chinese Language (level 5 part 1) SP2022 Online 线上
+新时代社会认知实践 | None | 新时代社会认知实践SP2022 On-site 线下
