@@ -1,4 +1,4 @@
-# CourseSelector v1.0.8
+# CourseSelector v1.1.2
 
 ## 上海交通大学密西根学院自动选课软件
 
