@@ -111,6 +111,18 @@ def getAllInformation(): # 后续循环时调用这个函数, 出现异常直接
         re=r['text']['data']["electTurnResult"]
         re=r['text']['data']["lessonTasks"]
     except:
+        t=str(getTime())
+        print(t+': 选课网站连接成功，但返回了错误信息')
+        try:
+            f=open('./错误记录.txt','a+')
+            f.write("\n\n\n\n"+t+"")
+            f.write(json.dumps(r['text'],ensure_ascii=False))
+            f.close()
+        except:
+            try:
+                print(json.dumps(r['text'],ensure_ascii=False))
+            except:
+                print(r['extra'])
         return -1
     return r['text']
 
