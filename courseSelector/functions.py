@@ -20,6 +20,9 @@ def getElectTurnId():
     url=getGlobalValue('etiu')+str(getTime())
     header=getGlobalValue('gch')
     r=http(url,Header=header,Timeout=1500)
+    while(r['status']==-2):
+        print('连接服务器失败, 正在重新尝试...')
+        r=http(url,Header=header,Timeout=1500)
     if(r['status']==-1):
         print('无网络连接, 程序已结束运行')
         sleep(0.5)
@@ -72,6 +75,9 @@ def getAllInformationFirst(): # 第一次获取信息时调用这个函数, 出�
     url=gcu1+url
     header=getGlobalValue('gch')
     r=http(url,Header=header,Timeout=3000)
+    while(r['status']==-2):
+        print('连接服务器失败, 正在重新尝试...')
+        r=http(url,Header=header,Timeout=3000)
     if(r['status']==-1):
         print('无网络连接, 程序已结束运行')
         sleep(0.5)
@@ -91,6 +97,7 @@ def getAllInformationFirst(): # 第一次获取信息时调用这个函数, 出�
 
 def getAllInformation(): # 后续循环时调用这个函数, 出现异常直接忽略
     # 这里先不设置循环, 后面将这个函数包在另一个函数里, 在那里设置循环
+    sleep(0.5)
     gcu1=getGlobalValue('gcu1')
     gcu2=getGlobalValue('gcu2')
     if(getTime()>=getGlobalValue('startTime')):
@@ -100,7 +107,8 @@ def getAllInformation(): # 后续循环时调用这个函数, 出现异常直接
     url=quote(gcu2+eti+gcu3,encoding='utf-8')
     url=gcu1+url
     header=getGlobalValue('gch')
-    r=http(url,Header=header,Timeout=3000)
+    r=http(url,Header=header,Timeout=10000)
+    # print(r)
     if(r['code']==302):
         print(str(getTime())+": Cookie 失效, 请重新设置 Cookie, 程序已结束运行")
         sleep(0.5)
@@ -137,6 +145,7 @@ def getSelectedCourses(AllInformation):
     for one in all:
         if(electTurnId==one["electTurnId"] and str(one["electStatus"]) in ['4','0']):
             l.append(one["lessonTaskId"])
+    # print(l)
     return l
 
 def selectOneCourse(lessonTaskId):
@@ -154,8 +163,9 @@ def selectOneCourse(lessonTaskId):
         body="jsonString="+quote(jss,encoding='utf-8')
         header['Content-Length']=str(len(body))
         url=getGlobalValue('scu')+str(getTime())
-        r=http(url,Method='POST',Header=header,Timeout=1500,BODY=body)
-        # print(r)
+        print('正在发送选课指令')
+        r=http(url,Method='POST',Header=header,Timeout=2000,BODY=body)
+        print(r)
 
 
 
@@ -249,7 +259,7 @@ def mainControl():
                     info[1]=False
                     setGlobalValue(ltid,info)
                     continue
-                if(not hasSpace(ltid)):
+                if((not hasSpace(ltid)) and getGlobalValue('force-selecting')==False):
                     info=getGlobalValue(ltid)
                     info=deepcopy(info)
                     print(str(getTime())+': '+info[2]+' 选课失败')

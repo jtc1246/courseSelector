@@ -68,6 +68,7 @@ _globalVar['allInfo']={}
 _globalVar['failTimes']=0
 _globalVar['IntFailTimes']=0
 _globalVar['courses']=tuple()
+_globalVar['force-selecting']=False
 
 # globalVar 中还有另外一种数据类型:
 # key 为 lessonTaskId, value 为 [electTurnLessonTaskId,canSelect,description]
@@ -192,6 +193,7 @@ def resetAll():
     _globalVar['failTimes']=0
     _globalVar['IntFailTimes']=0
     _globalVar['courses']=tuple()
+    _globalVar['force-selecting']=False
 
 
 

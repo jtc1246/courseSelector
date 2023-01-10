@@ -110,14 +110,16 @@ def waitEmptySpace(jsessionid:str,courses:list,threadNum:int=5):
 
 
 
-def fastSelect(jsessionid:str,courses:list,threadNum:int=10):
+def fastSelect(jsessionid:str,courses:list,threadNum:int=10,force_selecting=True):
     # 初始化部分
     resetAll()
+    setGlobalValue('force-selecting',force_selecting)
     if(threadNum<=0):
         print('线程数必须大于 0')
         sleep(0.5)
         os._exit(-1)
     check(jsessionid)
+    setGlobalValue('force-selecting',force_selecting)
     if(getGlobalValue('mode').find('arly')==-1):
         print('本轮选课不是 Early Bird, 不适用本软件')
         sleep(0.5)
