@@ -4,6 +4,7 @@ from copy import deepcopy
 from .myHttp import *
 import os
 from time import sleep
+from random import randint
 
 # 格式:
 # {"electTurnId":"158C59EB-C733-4C3A-8E78-C314DCEC70BF","autoElect":true,"lessonTasks":["A57528CC-AECA-4266-874E-039386315A2A"]}
@@ -238,6 +239,7 @@ def getInfoMain():
         setGlobalValue('allInfo',t)
         setGlobalValue('newMsg',True)
         setGlobalValue('failTimes',0)
+        sleep(randint(5,8)/100)
 
 
 
