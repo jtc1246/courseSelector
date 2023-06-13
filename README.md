@@ -2,24 +2,6 @@
 
 ## 上海交通大学密西根学院自动选课软件
 
-## 重要通知
-
-### 2023.1.11 16:25 (GMT+8)
-
-今天 15:04 canvas 上收到通知，发现有人使用软件进行自动选课，选课网站将会监控这种行为，并在发现后取消选课资格。建议您立即停止使用本软件，并且停止任何违反规则的选课。以下是通知的部分原文：
-
-During the last course registration rounds, some students were caught using “an automated enrollment script” to automatically enroll for classes, which has led to some system problems. IT office will now be monitoring for enrollment scripts and urged students to stop using the scripts immediately or they may face consequences.
-
-The course registration system will be updated to give our students a better course registration experience. Meanwhile, after discussing with the Undergraduate Education Office, Course Registration Policy will be updated as follows:
-
-(The new policy will apply from 3rd round of 2023 Spring Course Registration)
-
-Penalty
-
-Students’ course enrollment status will be canceled if they used the script during the course registration.
-
-If you break any of the academic rules, your enrollment status can be canceled eventually!
-
 ## 使用方式
 
 ### 1. 安装
